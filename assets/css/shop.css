@@ -22,6 +22,7 @@ body {
     padding: 0px 10px;
 }
 
+.buy-btn,
 .btn-cart {
     color: #fff;
     background-color: #c23;
@@ -31,6 +32,7 @@ body {
     text-transform: uppercase;
 }
 
+.buy-btn:hover,
 .btn-cart:hover {
     background-color: #fff;
     color: #c23;
@@ -44,7 +46,7 @@ body {
 }
 
 .product-item {
-    width: 230px;
+    width: 250px;
     border: 1px solid #ccc;
     padding: 10px;
     box-sizing: border-box;
