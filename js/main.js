@@ -14,7 +14,11 @@ const renderProduct = (title = 'No Title', price = 999999.99, image = 'assets/im
             </div>`;
 };
 
-const renderPage = list => document.querySelector('.products').innerHTML = list.map(item => renderProduct(item.title, item.price));
+// since .map returns an array, it's converted into a string when the result is being assigned
+// to string innerHTML. the conversion calls toString() method, that returns a comma-separated string
+// To prevent it we should convert the array into a string explicitly e.g. using join()
+const renderPage = list => document.querySelector('.products').innerHTML 
+        = list.map(item => renderProduct(item.title, item.price)).join('');
 
 
 renderPage(products);
