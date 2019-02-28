@@ -30,6 +30,7 @@ body {
     cursor: pointer;
     border-radius: 4px;
     text-transform: uppercase;
+    outline: none;
 }
 
 .buy-btn:hover,
@@ -54,4 +55,10 @@ body {
 
 .product-item:hover {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.product-item-title {
+    margin-top: 5px;
+    color: #c23;
+    text-transform: uppercase;
 }

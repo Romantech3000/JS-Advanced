@@ -7,16 +7,14 @@ const products = [
 
 const renderProduct = (title = 'No Title', price = 999999.99, image = 'assets/images/no_image.jpg') => {
     return `<div class="product-item">
-                <h3>${title}</h3>
+                <h3 class="product-item-title">${title}</h3>
                 <img src="${image}">
                 <p>${price}</p>
                 <button class="buy-btn">Купить</button>
             </div>`;
 };
 
-const renderPage = list => {
-    const productsList = list.map(item => renderProduct(item.title, item.price));
-    document.querySelector('.products').innerHTML = productsList;
-};
+const renderPage = list => document.querySelector('.products').innerHTML = list.map(item => renderProduct(item.title, item.price));
+
 
 renderPage(products);
