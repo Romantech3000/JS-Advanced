@@ -29,9 +29,7 @@ class ProductsList {
     }
 
     getTotal() {
-        //plain reduce concatenated the prices instead of addition, so to avoid type casting I used map()
-        //not sure which way would be considered "best practice" and cleaner coding
-        return this.goods.map(prod => prod.price).reduce( (total, price) => total + price );
+        return this.goods.reduce( (total, prod) => total + prod.price, 0 );
     }
 }
 
