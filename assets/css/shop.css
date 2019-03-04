@@ -86,3 +86,29 @@ a {
     display: inline-block;
     text-decoration: none;
 }
+
+.cart-item-flex {
+    display: flex;
+    align-content: center;
+}
+
+.cart-item-w1 {
+    width: 80px;
+}
+
+.cart-item-w3 {
+    width: 200px;
+}
+
+.del-btn::before {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    content: 'x';
+    padding: 10px;
+}
+
+.cart-total {
+    font-weight: 700;
+    font-size: 24px;
+}

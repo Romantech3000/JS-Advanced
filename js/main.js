@@ -25,12 +25,13 @@ class ProductsList {
             this.allProducts.push(productObj);
             block.insertAdjacentHTML('beforeend', productObj.render());
         }
+        block.insertAdjacentHTML('afterend', `<p class="cart-total">Стоимость товаров: ${this.getTotal()} ${currencyTag}</p>`);
     }
 
     getTotal() {
-        let total = 0;
-        this.goods.forEach(prod => {total += prod.price * prod.quantity});
-        return total;
+        //plain reduce concatenated the prices instead of addition, so to avoid type casting I used map()
+        //not sure which way would be considered "best practice" and cleaner coding
+        return this.goods.map(prod => prod.price).reduce( (total, price) => total + price );
     }
 }
 
@@ -56,46 +57,77 @@ class ProductItem {
     }
 }
 
+//not enough fun creating empty classes
 class ShopCart {
     constructor(container = '#cart') {
         this.container = container;
         this.products = [];
     }
     
-    addProduct(product, quantity) {
-
+    addProduct(product, quantity = 1) {
+        const prodIdx = this.products.findIndex(prod => prod.id === product.id);
+        if (prodIdx < 0) {
+            this.products.push(product);
+            this.products[this.products.products.length-1].quantity = quantity;
+        }
+        else {
+            this.products[prodIdx].quantity += quantity;
+        }
     }
 
-    delProduct() {
-
+    delProduct(prodId) {
+        const prodIdx = this.products.findIndex(prod => prod.id === prodId);
+        if (prodIdx >= 0) this.products.splice(prodIdx, 1);
     }
 
     render() {
         const containerEl = document.querySelector(this.container);
+        let content = '';
         this.products.forEach(prod => {
-            render
+            const cartItem = new CartItem(product);
+            cpntent += cartItem.render();
         });
+        containerEl.innerHTML = content;
     }
 
     getTotal() {
         let total = 0;
-        this.products.forEach(prod => {total += prod.price * prod.quantity});
+        //this.products.forEach(prod => {total += prod.price * prod.quantity});
+        // for .. of practice
+        for (let prod of this.products) total += prod.price * prod.quantity;
         return total;
     }
 }
 
 class CartItem {
-    constructor(product, quantity = 1) {
+    constructor(product) {
+        this.id = prodict.id;
         this.price = product.price;
         this.title = product.title;
-        this.quantity = quantity;
+        this.quantity = product.quantity;
     }
 
-    render(){
-
+    render() {
+        return `<div class="cart-item-flex" data-id="${this.id}">
+                <img src="${TMB_DIR + this.img}" alt="${this.title}">
+                <div class="cart-item-w3">
+                    <p class="cart-item-title">${this.title}</p>
+                </div>
+                <div class = "cart-item-w1">
+                    <p class="product-item-price">${this.price + " " + currencyTag}</p>
+                </div>
+                <div class = "cart-item-w1">
+                    ${this.quantity}
+                </div>
+                <div>
+                    <button class="del-btn" data-id="${this.id}">Удалить</button>
+                </div>
+            </a>
+        </div>`;
     }
 }
 
 
 let list = new ProductsList();
 list.render();
+
