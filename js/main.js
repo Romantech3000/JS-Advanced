@@ -5,8 +5,8 @@ let currencyTag = '&euro;';
 class ProductsList {
     constructor(container = '.products'){
         this.container = container;
-        this.goods = [];
-        this.allProducts = [];
+        this.goods = []; // "raw" prodict data
+        this.allProducts = []; //
         this._fetchProducts()
     }
     _fetchProducts(){
@@ -55,7 +55,6 @@ class ProductItem {
     }
 }
 
-//not enough fun creating empty classes
 class ShopCart {
     constructor(container = '#cart') {
         this.container = container;
@@ -83,7 +82,7 @@ class ShopCart {
         let content = '';
         this.products.forEach(prod => {
             const cartItem = new CartItem(product);
-            cpntent += cartItem.render();
+            content += cartItem.render();
         });
         containerEl.innerHTML = content;
     }
