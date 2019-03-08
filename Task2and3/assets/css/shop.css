@@ -112,3 +112,24 @@ a {
     font-weight: 700;
     font-size: 24px;
 }
+
+.cart {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: -20px;
+    width: 300px;
+    min-height: 100px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.cart-show {
+    display: block;
+}
+
+.header-right {
+    position: relative;
+}

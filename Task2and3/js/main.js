@@ -1,7 +1,7 @@
 const API = 'https://raw.githubusercontent.com/Romantech3000/assets/master/homework-a/json';
+const IMG_DIR = 'https://raw.githubusercontent.com/Romantech3000/assets/master/homework-a/images/';
 
-
-const IMG_DIR = 'assets/images/';
+//const IMG_DIR = 'assets/images/';
 const TMB_DIR = 'assets/thumbnails/'; //thumbnails
 let currencyTag = '&euro;';
 
@@ -19,7 +19,7 @@ class ProductsList {
         this._fetchProducts()
             .then( (data) => {
                 this.goods = [...data];
-                console.log(this.goods);
+                console.log('got products data:\n' + JSON.stringify(this.goods));
                 this.render();
             })
             .catch((err) => console.log(err));
@@ -80,8 +80,28 @@ class ShopCart {
     constructor(container = '#cart') {
         this.container = container;
         this.products = [];
+        this.isVisible = false;
     }
-    
+
+    get visible() {
+        return this.isVisible;
+    }
+
+    set visible(vis) {
+        let cartEl = document.querySelector(this.container);
+
+        if (cartEl) {
+            if (vis) {
+                cartEl.classList.add('cart-show');
+            } else {
+                cartEl.classList.remove('cart-show');
+            }
+            this.isVisible = vis;
+        } else {
+            console.log('Cant find the cart block')
+        }
+    }
+
     addProduct(product, quantity = 1) {
         const prodIdx = this.products.findIndex(prod => prod.id === product.id);
         if (prodIdx < 0) {
@@ -146,5 +166,26 @@ class CartItem {
 }
 
 
-let list = new ProductsList();
+function init() {
 
+    let list = new ProductsList();
+    let cart = new ShopCart();
+
+    const showCartEl = document.querySelector('#show-cart-btn');
+    if (showCartEl) {
+        showCartEl.addEventListener('click', () => { cart.visible = !cart.visible});
+    }
+
+    const prodsEl = document.querySelector('.products');
+
+    prodsEl.addEventListener('click', (e) => {
+        if (e.target.classList.contains('buy-btn')) {
+            let prodId = +e.target.dataset.id;
+            console.log(prodId);
+            e.preventDefault();
+        };
+    })
+}
+
+
+window.addEventListener('load', init);
