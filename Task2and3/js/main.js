@@ -44,10 +44,6 @@ class ProductsList {
     }
 
     getTotal() {
-        //return this.goods.reduce( (total, prod) => total + prod.price, 0 );
-        // Только для подсчета стоимости, вы сейчас итерируете массив goods -
-        // на самом деле в этом массиве хранятся сырые данные, лучше итерировать this.allProducts -
-        // в этом массиве хранятся уже непосредственно объекты товаров
         return this.allProducts.reduce( (total, prod) => total + prod.price, 0 );
     }
 }
