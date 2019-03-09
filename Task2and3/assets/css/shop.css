@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'tello';
+    src: url('https://raw.githubusercontent.com/Romantech3000/assets/master/homework-a/fonts/fontello.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: 'PT Sans', sans-serif;
+    color: #222;
 }
 
 .header {
@@ -10,7 +18,7 @@ body {
 
 .container {
     height: 100%;
-    margin: 0px auto;
+    margin: 0 auto;
     max-width: 1140px;
 }
 
@@ -19,7 +27,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10px;
+    padding: 0 10px;
 }
 
 .buy-btn,
@@ -54,6 +62,7 @@ body {
     padding: 10px;
     box-sizing: border-box;
     flex: 0 1 250px;
+    margin-bottom: 15px;
 }
 
 .product-item:hover {
@@ -92,20 +101,46 @@ a {
     align-content: center;
 }
 
-.cart-item-w1 {
-    width: 80px;
+.cart-item-w1,
+.cart-item-w3 {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+
 .cart-item-w3 {
-    width: 200px;
+    width: 180px;
+}
+
+.product-item-price {
+    font-weight: 400;
+    color: #000;
+    font-size: 14px;
+    margin: 0;
+}
+
+.del-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .del-btn::before {
+    font-family: 'tello';
+    font-size: 20px;
     display: inline-block;
     height: 20px;
     width: 20px;
-    content: 'x';
+    content: '\e80c';
+    color: #555;
     padding: 10px;
+}
+
+.del-btn:hover::before {
+    color: #c23;
 }
 
 .cart-total {
@@ -118,12 +153,12 @@ a {
     position: absolute;
     top: 50px;
     right: -20px;
-    width: 300px;
+    width: 350px;
     min-height: 100px;
     background-color: #fff;
     padding: 10px;
     border: 1px solid #ccc;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.3);
 }
 
 .cart-show {
