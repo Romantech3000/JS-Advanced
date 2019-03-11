@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework</title>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://romantech3000.github.io/assets/css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head> 
+<body>
+    <div class="container">
+    <section class="box-section"> 
+        <h2>Text Filter</h2>
+        <h4>Original Text</h4>
+        <p id="source-text" class="filter-text"></p>
+        <button class="btn" id="filter-btn">Replace single quotation marks &apos; with double quotation marks  &quot;</button>
+        <div class="input-wrap">
+            <label class="label-xl" for="keep-apos-check">Keep apostrophies</label>
+            <input type="checkbox" name="keep-apos" id="keep-apos-check" class="check-xl">
+        </div>
+        <h4>Target Text</h4>
+        <p id="target-text" class="filter-text"></p>
+    </section>
+    </div>
+    <section class="wide-section">
+        <div class="container">
+            <h2 class="cf-h2">Форма обратной связи:</h2>
+            <div class="cf-wrap">
+                <form action="#" method="POST" id="contact-form">
+                    <p>Имя:</p>
+                    <div class="pos-wrap"><input type="text" id="cf-name" placeholder="Иванов Иван"></div>
+                    <p>Телефон (в формате +7(000)000-0000):</p>
+                    <div class="pos-wrap"><input type="text" id="cf-phone" placeholder="+7(000)000-0000"></div>
+                    <p>E-mail:</p>
+                    <div class="pos-wrap"><input type="text" id="cf-email" placeholder="demo@demo.com"></div>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="type your message here"></textarea>
+                    <button class="btn wide" type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

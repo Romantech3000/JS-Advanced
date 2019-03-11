@@ -1,0 +1,135 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.filter-text {
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.box-section {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+.wide-section {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 40px;
+    background-color: #555;
+    color: #fff;
+}
+
+.btn {
+    padding: 12px;
+    outline: none;
+    border: 1px solid #555;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #555;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: #555;
+    color: #fff;
+    
+    box-shadow: 0 0 10px rgba(200, 250, 250, 0.8);
+}
+
+.btn:active {
+    box-shadow: 0 0 10px rgba(200, 0, 0, 0.5);
+    border: 1px solid #a55;
+}
+
+
+.check-xl {
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+    padding: 50px;
+    margin-left: 24px;
+}
+
+.label-xl {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    float: right;
+    line-height: 32px;
+    margin-left: 12px;
+}
+
+
+.input-wrap {
+    display: inline-block;
+    clear: both;
+}
+
+.cf-wrap {
+    width: 800px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+input[type=text] {
+    display: block;
+    padding: 8px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+textarea {
+    margin: 20px 0;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.cf-h2 {
+    text-align: center;
+}
+
+#cf-name {
+    text-transform: capitalize;
+}
+
+.wide {
+    width: 100%;
+}
+
+.alert {
+    outline: 2px solid red;
+}
+
+.pos-wrap {
+    position: relative;
+}
+
+.alert::after {
+    position: absolute;
+    font-size: 12px;
+    line-height: 24px;
+    top: 5px;
+    right: 5px;
+    width: 140px;
+    padding: 2px 5px;
+    background-color: red;
+    z-index: 1000;
+    content: '<< неверные данные';
+}
