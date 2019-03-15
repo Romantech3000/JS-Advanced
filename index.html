@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" type="text/css" href="https://romantech3000.github.io/assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/shop.css">
+    <script src="js/main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+    <div id='vue-wrap'>
+    <header class="header">
+        <div class="container header-flex">
+            <a href="#"><span class="header-logo"><img src="https://raw.githubusercontent.com/Romantech3000/assets/master/homework-a/images/logo.png" alt="logo"></span></a>
+
+            <form action="#" class="search-form" @submit.prevent="filterProducts">
+                    <input type="text" class="input search-form__input" v-model="searchLine">
+                    <button class="btn search-form__btn" type="submit"></button>
+            </form>
+
+            <div class="header-right">
+                <button class="btn btn-cart" id="show-cart-btn" type="button" @click="isVisibleCart =! isVisibleCart;">Корзина</button>
+                <div id="cart" class="cart" v-show="isVisibleCart" @click="remove">
+                    <div class="cart-item-flex" v-for="item of cart.products" :data-id="item.id" :key="item.id">
+                        <img :src="item.img" :alt="item.title">
+                        <div class="cart-item-w3">
+                            <p class="cart-item-title">{{ item.title }}</p>
+                        </div>
+                        <div class = "cart-item-w1">
+                            <p class="cart-item-price" v-html="item.price + currencyTag"></p>
+                        </div>
+                        <div class = "cart-item-w1">{{ item.quantity }}</div>
+                        <div class = "cart-item-w1">
+                            <button class="del-btn" :data-id="item.id" title="Удалить"></button>
+                        </div>
+                    </div>
+                    <p v-if="isCartEmpty">Корзина пуста</p>
+                    <div v-else class="cart__total-flex">
+                        <p class="cart-total">Total price: </p>
+                        <p class="cart-total" v-html="getCartTotal() + currencyTag"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="products">
+            <div class="product-item" v-for="product of filtered" :key="product.id">
+                <a class="product-item-link" href="#">
+                    <img :src="product.img" :alt="product.title">
+                    <h3 class="product-item-title">{{ product.title }}</h3>
+                    <div class="product-item-bottom-flex">
+                        <p class="product-item-price">{{product.price}} <span v-html="currencyTag"></span></p>
+                        <button class="btn buy-btn" :data-id="product.id">Купить</button>
+                    </div>
+                </a>
+            </div>
+            <p v-if="!filtered.length">Нет данных</p>
+        </div>
+
+    </main>
+    </div>
+    <script src="js/vue.js"></script>
+
+</body>
+</html>
