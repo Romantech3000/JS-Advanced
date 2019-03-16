@@ -162,7 +162,7 @@ a {
 .cart {
     display: block;
     position: absolute;
-    top: 48px;
+    top: 50px;
     right: -20px;
     width: 350px;
     min-height: 100px;

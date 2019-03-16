@@ -21,8 +21,8 @@
 
             <div class="header-right">
                 <button class="btn btn-cart" id="show-cart-btn" type="button" @click="isVisibleCart =! isVisibleCart;">Корзина</button>
-                <div id="cart" class="cart" v-show="isVisibleCart" @click="remove">
-                    <div class="cart-item-flex" v-for="item of cart.products" :data-id="item.id" :key="item.id">
+                <div id="cart" class="cart" v-show="isVisibleCart" @click="removeClick">
+                    <div class="cart-item-flex" v-for="item of cartProducts" :data-id="item.id" :key="item.id">
                         <img :src="item.img" :alt="item.title">
                         <div class="cart-item-w3">
                             <p class="cart-item-title">{{ item.title }}</p>
@@ -38,14 +38,14 @@
                     <p v-if="isCartEmpty">Корзина пуста</p>
                     <div v-else class="cart__total-flex">
                         <p class="cart-total">Total price: </p>
-                        <p class="cart-total" v-html="getCartTotal() + currencyTag"></p>
+                        <p class="cart-total" v-html="cartTotal + currencyTag"></p>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <main class="container">
-        <div class="products">
+        <div class="products" @click="addToCartClick">
             <div class="product-item" v-for="product of filtered" :key="product.id">
                 <a class="product-item-link" href="#">
                     <img :src="product.img" :alt="product.title">
