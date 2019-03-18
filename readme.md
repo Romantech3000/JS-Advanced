@@ -1,4 +1,6 @@
 JavaScript - Продвинутый уровень
 =================================
 
-Репозиторий для сдачи ДЗ
+ДЗ Урок 6
+
+Cart, Products, Search, and Error Vue components
