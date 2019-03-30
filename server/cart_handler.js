@@ -7,6 +7,8 @@ const actions = {
     del: cart.del
 };
 
+// we should probably create this file for a user at some point.
+// probably when we create a session or the 1st product is being added
 const handler = (req, res, action, fileName) => {
     fs.readFile(fileName, 'utf-8', (err, data) => {
         if (err) {

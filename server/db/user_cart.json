@@ -3,25 +3,25 @@
   "countGoods": 3,
   "contents": [
     {
-      "quantity": 3,
-      "img": "product_2.jpg",
-      "id_product": 2,
-      "product_name": "Tango People T-Shirt",
-      "price": 20
+      "quantity": 1,
+      "img": "product_1.jpg",
+      "id_product": 1,
+      "product_name": "Mango People T-Shirt",
+      "price": 2000
     },
     {
       "quantity": 2,
-      "img": "product_12.jpg",
-      "id_product": 12,
-      "product_name": "Phoney People Shirt",
+      "img": "product_11.jpg",
+      "id_product": 11,
+      "product_name": "Herp & Derp Shirt",
       "price": 30
     },
     {
-      "quantity": 3,
-      "img": "product_3.jpg",
-      "id_product": 3,
-      "product_name": "Congo People T-Shirt",
-      "price": 200
+      "quantity": 1,
+      "img": "product_10.jpg",
+      "id_product": 10,
+      "product_name": "Poncho Mexicano",
+      "price": 550
     }
   ]
 }
