@@ -8,6 +8,9 @@
   },
   "author": "",
   "license": "ISC",
+  "nodemonConfig": {
+    "ignore": ["*.json", "public/*"]
+  },
   "dependencies": {
     "express": "^4.16.4",
     "moment": "^2.24.0"
