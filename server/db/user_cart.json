@@ -1,0 +1,27 @@
+{
+  "amount": 450,
+  "countGoods": 3,
+  "contents": [
+    {
+      "quantity": 2,
+      "img": "product_8.jpg",
+      "id_product": 8,
+      "product_name": "Phoney People Shirt",
+      "price": 30
+    },
+    {
+      "quantity": 1,
+      "img": "product_1.jpg",
+      "id_product": 1,
+      "product_name": "Mango People T-Shirt",
+      "price": 2000
+    },
+    {
+      "quantity": 2,
+      "img": "product_2.jpg",
+      "id_product": 2,
+      "product_name": "Tango People T-Shirt",
+      "price": 20
+    }
+  ]
+}
