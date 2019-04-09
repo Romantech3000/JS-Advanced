@@ -131,7 +131,10 @@ Vue.component ('cats-accord-el', {
     },
     methods: {
       headingClick(idx) {
-          this.catsOpen[idx] = !this.catsOpen[idx];
+          let wasOpen = this.catsOpen[idx];
+          for (let i = 0; i < this.catsOpen.length; i++) Vue.set(this.catsOpen, i, false);
+          Vue.set(this.catsOpen, idx, !wasOpen);
+          //this.catsOpen[idx] = !wasOpen;
           this.$forceUpdate();
       }
     },
@@ -146,7 +149,7 @@ Vue.component ('cats-accord-el', {
                 :class="['vert-menu__heading', {'is-open': catsOpen[index]}]" 
                 @click="headingClick(index)">
                 
-                {{ cat.catName }} {{catsOpen[index]}}
+                {{ cat.catName }}
             </h3>
             <ul class="vert-menu__sub" >
                 <cats-accord-list-el :cats="cat.subCats"></cats-accord-list-el>
