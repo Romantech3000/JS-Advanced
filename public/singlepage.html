@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <!--It still leaves margins and paddings for ul-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="js/custom_select.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+<div id="vm">
+    <header class="header">
+        <div class="container header-flex">
+            <div class="header-left">
+                <a class="logo-site" href="index.html">
+                    <img src="assets/images/logo-site.png" alt="Brand Logo" class="logo-site-img">
+                    BRAN<span class="pinky">D</span>
+                </a>
+                <form class="header-form" action="#">
+                    <cats-dropdown-el></cats-dropdown-el>
+                    <div class="search-wrapper">
+                        <input type="text" class="search-input" placeholder="Search for item...">
+                        <i class="search-input-icon">&#xe800;</i>
+                    </div>
+                </form>
+            </div>
+            <div class="header-right">
+                <cart-el class="shopcart-block" ref="cart" :currency-tag="currencyTag"></cart-el>
+                <a href="#" class="btn arwdwn">My Account </a>
+            </div>
+        </div>
+    </header>
+    <nav class="nav-band">
+        <div class="container">
+            <ul id="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Home</a>
+                </li>
+                <li class="menu-item">
+                    <a href="category.html" class="menu-link">Men</a>
+                    <div class="mm-drop-flex">
+                        <div class="mm-drop-col">
+                            <h3 class="mm-col-heading">Men</h3>
+                            <ul class="mm-drop-ul">
+                                <li><a href="#" class="mm-drop-link">Dresses</a></li>
+                                <li><a href="#" class="mm-drop-link">Tops</a></li>
+                                <li><a href="#" class="mm-drop-link">Sweaters/Knits</a></li>
+                                <li><a href="#" class="mm-drop-link">Jackets/Coats</a></li>
+                                <li><a href="#" class="mm-drop-link">Blazers</a></li>
+                                <li><a href="#" class="mm-drop-link">Denim</a></li>
+                                <li><a href="#" class="mm-drop-link">Leggings/Pants</a></li>
+                                <li><a href="#" class="mm-drop-link">Skirts/Shorts</a></li>
+                                <li><a href="#" class="mm-drop-link">Accessories </a></li>
+                            </ul>
+                        </div>
+                        <div class="mm-drop-col">
+                            <h3 class="mm-col-heading">Men</h3>
+                            <ul class="mm-drop-ul">
+                                <li><a href="#" class="mm-drop-link">Dresses</a></li>
+                                <li><a href="#" class="mm-drop-link">Tops</a></li>
+                                <li><a href="#" class="mm-drop-link">Sweaters/Knits</a></li>
+                                <li><a href="#" class="mm-drop-link">Jackets/Coats</a></li>
+                                <li><a href="#" class="mm-drop-link">Blazers</a></li>
+                                <li><a href="#" class="mm-drop-link">Denim</a></li>
+                                <li><a href="#" class="mm-drop-link">Leggings/Pants</a></li>
+                                <li><a href="#" class="mm-drop-link">Skirts/Shorts</a></li>
+                                <li><a href="#" class="mm-drop-link">Accessories </a></li>
+                            </ul>
+                        </div>
+                        <div class="mm-drop-col">
+                            <h3 class="mm-col-heading">Men</h3>
+                            <ul class="mm-drop-ul">
+                                <li><a href="#" class="mm-drop-link">Dresses</a></li>
+                                <li><a href="#" class="mm-drop-link">Tops</a></li>
+                                <li><a href="#" class="mm-drop-link">Sweaters/Knits</a></li>
+                                <li><a href="#" class="mm-drop-link">Jackets/Coats</a></li>
+                                <li><a href="#" class="mm-drop-link">Blazers</a></li>
+                            </ul>
+                            <div class="mm-img-block">
+                                <img src="assets/images/mm_men.jpg" alt="men" class="mm-img">
+                                <p class="mm-img-title">Super<br>sale!</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="menu-link">Women</a>
+                    <div class="mm-drop-flex">
+                        <div class="mm-drop-col">
+                            <h3 class="mm-col-heading">Women</h3>
+                            <ul class="mm-drop-ul">
+                                <li><a href="#" class="mm-drop-link">Dresses</a></li>
+                                <li><a href="#" class="mm-drop-link">Tops</a></li>
+                                <li><a href="#" class="mm-drop-link">Sweaters/Knits</a></li>
+                                <li><a href="#" class="mm-drop-link">Jackets/Coats</a></li>
+                                <li><a href="#" class="mm-drop-link">Blazers</a></li>
+                                <li><a href="#" class="mm-drop-link">Denim</a></li>
+                                <li><a href="#" class="mm-drop-link">Leggings/Pants</a></li>
+                                <li><a href="#" class="mm-drop-link">Skirts/Shorts</a></li>
+                                <li><a href="#" class="mm-drop-link">Accessories </a></li>
+                            </ul>
+                        </div>
+                        <div class="mm-drop-col">
+                            <h3 class="mm-col-heading">Women</h3>
+                            <ul class="mm-drop-ul">
+                                <li><a href="#" class="mm-drop-link">Dresses</a></li>
+                                <li><a href="#" class="mm-drop-link">Tops</a></li>
+                                <li><a href="#" class="mm-drop-link">Sweaters/Knits</a></li>
+                                <li><a href="#" class="mm-drop-link">Jackets/Coats</a></li>
+                                <li><a href="#" class="mm-drop-link">Blazers</a></li>
+                                <li><a href="#" class="mm-drop-link">Denim</a></li>
+                                <li><a href="#" class="mm-drop-link">Leggings/Pants</a></li>
+                                <li><a href="#" class="mm-drop-link">Skirts/Shorts</a></li>
+                                <li><a href="#" class="mm-drop-link">Accessories </a></li>
+                            </ul>
+                        </div>
+                        <div class="mm-drop-col">
+                            <h3 class="mm-col-heading">Women</h3>
+                            <ul class="mm-drop-ul">
+                                <li><a href="#" class="mm-drop-link">Dresses</a></li>
+                                <li><a href="#" class="mm-drop-link">Tops</a></li>
+                                <li><a href="#" class="mm-drop-link">Sweaters/Knits</a></li>
+                                <li><a href="#" class="mm-drop-link">Jackets/Coats</a></li>
+                                <li><a href="#" class="mm-drop-link">Blazers</a></li>
+                                <li><a href="#" class="mm-drop-link">Denim</a></li>
+                                <li><a href="#" class="mm-drop-link">Leggings/Pants</a></li>
+                                <li><a href="#" class="mm-drop-link">Skirts/Shorts</a></li>
+                                <li><a href="#" class="mm-drop-link">Accessories </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a href="category.html" class="menu-link">Kids</a>
+                    <div class="mm-drop-flex">
+                        <div class="mm-drop-col">
+                            <h3 class="mm-col-heading">Women</h3>
+                            <ul class="mm-drop-ul">
+                                <li><a href="#" class="mm-drop-link">Dresses</a></li>
+                                <li><a href="#" class="mm-drop-link">Tops</a></li>
+                                <li><a href="#" class="mm-drop-link">Sweaters/Knits</a></li>
+                                <li><a href="#" class="mm-drop-link">Jackets/Coats</a></li>
+                                <li><a href="#" class="mm-drop-link">Blazers</a></li>
+                                <li><a href="#" class="mm-drop-link">Denim</a></li>
+                                <li><a href="#" class="mm-drop-link">Leggings/Pants</a></li>
+                                <li><a href="#" class="mm-drop-link">Skirts/Shorts</a></li>
+                                <li><a href="#" class="mm-drop-link">Accessories </a></li>
+                            </ul>
+                        </div>
+                        <div class="mm-drop-col">
+                            <h3 class="mm-col-heading">Women</h3>
+                            <ul class="mm-drop-ul">
+                                <li><a href="#" class="mm-drop-link">Dresses</a></li>
+                                <li><a href="#" class="mm-drop-link">Tops</a></li>
+                                <li><a href="#" class="mm-drop-link">Sweaters/Knits</a></li>
+                                <li><a href="#" class="mm-drop-link">Jackets/Coats</a></li>
+                                <li><a href="#" class="mm-drop-link">Blazers</a></li>
+                                <li><a href="#" class="mm-drop-link">Denim</a></li>
+                                <li><a href="#" class="mm-drop-link">Leggings/Pants</a></li>
+                                <li><a href="#" class="mm-drop-link">Skirts/Shorts</a></li>
+                                <li><a href="#" class="mm-drop-link">Accessories </a></li>
+                            </ul>
+                        </div>
+                        <div class="mm-drop-col">
+                            <h3 class="mm-col-heading">Women</h3>
+                            <ul class="mm-drop-ul">
+                                <li><a href="#" class="mm-drop-link">Dresses</a></li>
+                                <li><a href="#" class="mm-drop-link">Tops</a></li>
+                                <li><a href="#" class="mm-drop-link">Sweaters/Knits</a></li>
+                                <li><a href="#" class="mm-drop-link">Jackets/Coats</a></li>
+                                <li><a href="#" class="mm-drop-link">Blazers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item"><a href="#" class="menu-link">Accoseriese</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">Featured</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">Hot Deals</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="page-title-band">
+        <div class="container">
+            <h3 class="page-title-text">New Arrivals</h3>
+            <p class="breadcrumbs">Home / <span class="breadcrumbs-curpage">New Arrivals</span></p>
+        </div>
+    </div>
+    <div class="full-slider">
+        <div class="fs-center-block">
+            <div class="fs-slide1"></div>    
+        </div>
+        <div id="fs-nav-left" class="fs-nav-left ft-icon-left-open"></div>
+        <div id="fs-nav-right" class="fs-nav-right ft-icon-right-open"></div>
+    </div>
+    
+    <div class="container fs-des-box">
+        <h3 class="fs-des-box-title">WOMEN COLLECTION</h3>
+        <p class="fs-des-box-subtitle">Moschino Cheap And Chic</p>
+        <p class="fs-des-box-text">Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals. </p>
+        <div class="fs-des-box-flxrow">
+            <p class="fs-box-material">MATERIAL: <span class="fs-box-material-val">COTTON</span></p>
+            <p class="fs-box-designer">DESIGNER: <span class="fs-box-designer-val">BINBURHAN</span></p>
+        </div>
+        <p class="fs-box-price">$561</p>
+        <hr class="fs-box-hr">
+        <div class="fs-box-options-flx">
+            <div class="fs-box-option-col">
+                <h3 class="fs-option-title">CHOOSE COLOR</h3>
+                <div class="color-sel-wrap">
+                    <select>
+                        <option value="0">SelectColor</option>
+                        <option value="Red">Red</option>
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Pink">Pink</option>
+                        <option value="Black">Black</option>
+                        <option value="Grey">Grey</option>
+                    </select>
+                </div>
+            </div>
+            <div class="fs-box-option-col">
+                <h3 class="fs-option-title">CHOOSE SIZE</h3>
+                <div class="text-sel-wrap">
+                    <select>
+                        <option value="0">Select Size:</option>
+                        <option value="XXS">XXS</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+                </div>
+            </div>
+            <div class="fs-box-option-col">
+                <h3 class="fs-option-title">QUANTITY</h3>
+                <div class="text-sel-wrap">
+                    <select>
+                        <option value="0">Number:</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+            </div>                        
+        </div>
+        <div class="fs-box-addtocart-pos">
+            <a href="#" class="fs-box-addtocart-link">Add To Cart</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="maylikealso-sect">
+            <h2 class="maylikealso-title">you may like also</h2>
+            <products-el ref="products" :max-prods="4" :img-dir="imgDir" :currency-tag="currencyTag"></products-el>
+        </section>
+    </div>
+
+    <div class="testimony-band">
+        <div class="container flex">
+            <div class="mony">
+                <div class="mony__left"><img src="assets/images/testimony-face01.png" alt="" class="mony-img"></div>
+                <div class="mony__right">
+                    <div class="mony__paragr">
+                        <p class="mony__text">“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                            a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
+                        <p class="mony__author">Bin Burhan</p>
+                        <p class="mony__addr">Dhaka, Bd</p>
+                    </div>
+                    <div>
+                        <a href="#" class="mony__navbtn"></a>
+                        <a href="#" class="mony__navbtn color-bg1"></a>
+                        <a href="#" class="mony__navbtn"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subscr">
+                <form action="#" class="subscr__form">
+                    <p class="subscr__title">Subscribe</p>
+                    <p class="subscr__subtitle">FOR OUR NEWLETTER AND PROMOTION</p>
+                    <div class="subscr__mail-flex">
+                        <input type="text" name="email" id="" class="subscr__mail-input" placeholder="Enter Your Email">
+                        <input type="submit" value="Subscribe" class="subscr__submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-band1-flex container">
+            <div class="logodiv">
+                <a class="logo-site" href="#">
+                    <img src="assets/images/logo-site.png" alt="Brand Logo" class="logo-site-img">
+                    BRAN<span class="pinky">D</span>
+                </a>
+
+                <p class="footabout">Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.
+                </p>
+                <p class="footabout">Efficiently plagiarize 24/365 action items and focused infomediaries.
+                    Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.</p>
+            </div>
+            <div class="foot-mnu">
+                <p class="foot-mnu__title">COMPANY</p>
+                <ul class="foot-mnu__list">
+                    <li><a class="foot-mnu__link" href="#" >Home</a></li>
+                    <li><a class="foot-mnu__link" href="#">Shop</a></li>
+                    <li><a class="foot-mnu__link" href="#">About</a></li>
+                    <li><a class="foot-mnu__link" href="#">Now It Works</a></li>
+                    <li><a class="foot-mnu__link" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="foot-mnu">
+                <p class="foot-mnu__title">INFORMATION</p>
+                <ul class="foot-mnu__list">
+                    <li><a class="foot-mnu__link" href="#" >Tearms &amp; Condition</a></li>
+                    <li><a class="foot-mnu__link" href="#">Privacy Policy</a></li>
+                    <li><a class="foot-mnu__link" href="#">How to Buy</a></li>
+                    <li><a class="foot-mnu__link" href="#">How to Sell</a></li>
+                    <li><a class="foot-mnu__link" href="#">Promotion</a></li>
+                </ul>
+            </div>
+            <div class="foot-mnu">
+                <p class="foot-mnu__title">SHOP CATEGORY</p>
+                <ul class="foot-mnu__list">
+                    <li><a class="foot-mnu__link" href="#" >Men</a></li>
+                    <li><a class="foot-mnu__link" href="#">Women</a></li>
+                    <li><a class="foot-mnu__link" href="#">Children</a></li>
+                    <li><a class="foot-mnu__link" href="#">Apparel</a></li>
+                    <li><a class="foot-mnu__link" href="#">Browse All</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-band2">
+            <div class="footer2 container">
+                <p class="copy">&copy; 2017 Brand All Rights Reserved.</p>
+                <div class="social-flex">
+                    <a href="#" class="ft-icon-fb sociallink"></a>
+                    <a href="#" class="ft-icon-tw sociallink"></a>
+                    <a href="#" class="ft-icon-in sociallink inactive"></a>
+                    <a href="#" class="ft-icon-pt sociallink"></a>
+                    <a href="#" class="ft-icon-gp sociallink"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/products-comp.js"></script>
+<script src="js/cart-comp.js"></script>
+<script src="js/dropdown-comp.js"></script>
+<script src="js/main_vue.js"></script>
+</body>
+
+</html>
