@@ -23,10 +23,15 @@ const del = (cart, req) => {
     console.log(JSON.stringify(req.params));
     console.log('body');
     console.log(req.body);
-    let elIdx = cart.contents.findIndex((el) => el.id_product === +req.params.id);
-    cart.contents.splice(elIdx, 1);
+    if (req.params.id === 'all') {
+        cart.contents = [];
+    } else {
+        let elIdx = cart.contents.findIndex((el) => el.id_product === +req.params.id);
+        cart.contents.splice(elIdx, 1);
+    }
     return JSON.stringify(cart, null, 2);
 };
+
 
 module.exports = {
   add,

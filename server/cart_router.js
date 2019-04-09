@@ -25,9 +25,9 @@ router.put('/:id', (req, res) => {
     cart_handler(req, res, 'change', cartFile);
 });
 
-
 router.delete('/:id', (req, res) => {
     cart_handler(req, res, 'del', cartFile);
 });
+
 
 module.exports = router;

@@ -87,6 +87,20 @@ Vue.component('fullcart-el', {
             }
         },
 
+        clearCart() {
+            if (confirm('Are you sure you want to clear the cart?')) {
+                console.log(`Clearing shop cart`);
+                this.$parent.delJson(`${this.cartUrl}/all`)
+                    .then((resJson) => {
+                        if (resJson.result === 1) {
+                            this.cartProducts = [];
+                            this.syncLivecart();
+                        }
+                        else console.log(`Got result = ${resJson.result} from clearJson`);
+                    });
+            }
+        },
+
         updateProduct(prodId, delAll = true) { //delete a product from cart, delAll - all piees
             const prodIdx = this.cartProducts.findIndex(prod => prod.id_product === prodId);
             if (prodIdx >= 0) {
@@ -177,7 +191,7 @@ Vue.component('fullcart-el', {
         <p v-if="isCartEmpty">The Cart Is Empty</p>
         
         <div class="cart-buttons-flex">
-            <a href="#" class="cart-btn-long" @click.prevent="">Clear shopping cart</a>
+            <a href="#" class="cart-btn-long" @click.prevent="clearCart">Clear shopping cart</a>
             <a href="#" class="cart-btn-long">Continue shopping</a>
         </div>
         

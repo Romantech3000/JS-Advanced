@@ -62,7 +62,7 @@ const vm = new Vue({
                     console.log('deleting... ' + error);
                     this.$refs.error.showBox('Fetch Data Error', error);
                 });
-        },
+        }
     },
     mounted() {
     }
