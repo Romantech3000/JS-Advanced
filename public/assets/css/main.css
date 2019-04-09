@@ -828,11 +828,18 @@ a {
     color: #ef5b70;
     text-transform: uppercase;
     padding: 12px;
-    margin-bottom: 18px;
+    margin: 0 0 10px;
     cursor: pointer; }
     .vert-menu__heading.is-open::after {
       content: '\e808';
       color: #ef5b70; }
+    .vert-menu__heading + ul {
+      max-height: 1px;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); }
+    .vert-menu__heading.is-open + ul {
+      max-height: 1000px;
+      transition: max-height 1s ease-in-out; }
     .vert-menu__heading::after {
       float: right;
       font-family: tello;
@@ -848,7 +855,7 @@ a {
   .vert-menu__sub {
     list-style: none;
     padding-left: 17px;
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
     .vert-menu__sub a {
       font-size: 14px;
       font-weight: normal;
