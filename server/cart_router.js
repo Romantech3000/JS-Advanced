@@ -7,7 +7,7 @@ let cartFile = 'server/db/user_cart.json';
 
 
 router.get('/', (req, res) => {
-    console.log('router. get cart');
+    //console.log('router. get cart');
     fs.readFile(cartFile, 'utf-8', (err, data) => {
         if (err) {
             res.sendStatus(404, JSON.stringify({result: 0, text: err}));

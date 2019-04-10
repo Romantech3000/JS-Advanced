@@ -1051,12 +1051,23 @@ a {
     color: $main_accent_darker;
     text-transform: uppercase;
     padding: 12px;
-    margin-bottom: 18px;
+    margin: 0 0 10px;
     cursor: pointer;
 
     &.is-open::after {
       content: '\e808';
       color: $main_accent_darker;
+    }
+
+    + ul {
+      max-height: 1px;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    }
+
+    &.is-open + ul {
+      max-height: 1000px;
+      transition: max-height 1s ease-in-out;
     }
 
     &::after {
@@ -1077,7 +1088,7 @@ a {
   &__sub {
     list-style: none;
     padding-left: 17px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     & a {
       font-size: 14px;

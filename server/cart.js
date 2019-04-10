@@ -1,8 +1,8 @@
 const add = (cart, req) => {
-    console.log('Add. params');
-    console.log(JSON.stringify(req.params));
-    console.log('body');
-    console.log(req.body);
+    // console.log('Add. params');
+    // console.log(JSON.stringify(req.params));
+    // console.log('body');
+    // console.log(req.body);
     cart.contents.push(req.body);
     return JSON.stringify(cart, null, 2);
 };
@@ -13,16 +13,25 @@ const change = (cart, req) => {
     console.log(JSON.stringify(req.params));
     console.log('body');
     console.log(req.body);
+
     let find = cart.contents.find((el) => el.id_product === +req.params.id); // app/cart/:id
-    if (find) find.quantity += req.body.quantity;
+    if (find) {
+        if (req.body.quantity === 0) {
+            //directly setting the new quantity value
+            if (req.body.newQuantity) find.quantity = req.body.newQuantity;
+        } else {
+            // incrementing/decrementing the value by quantity passed
+            find.quantity += req.body.quantity;
+        }
+    }
     return JSON.stringify(cart, null, 2);
 };
 
 const del = (cart, req) => {
-    console.log('Del. params');
-    console.log(JSON.stringify(req.params));
-    console.log('body');
-    console.log(req.body);
+    // console.log('Del. params');
+    // console.log(JSON.stringify(req.params));
+    // console.log('body');
+    // console.log(req.body);
     if (req.params.id === 'all') {
         cart.contents = [];
     } else {

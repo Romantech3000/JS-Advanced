@@ -101,29 +101,17 @@ Vue.component('fullcart-el', {
             }
         },
 
-        updateProduct(prodId, delAll = true) { //delete a product from cart, delAll - all piees
+        updateProduct(prodId) {
             const prodIdx = this.cartProducts.findIndex(prod => prod.id_product === prodId);
             if (prodIdx >= 0) {
-                console.log(`Deleting product with ID: ${prodId}`);
-                if (delAll || this.cartProducts[prodIdx].quantity < 2) {
-                    console.log(`Calling API: ${this.cartUrl}/${prodId}`);
-                    this.$parent.delJson(`${this.cartUrl}/${prodId}`)
-                        .then((resJson) => {
-                            if (resJson.result === 1) this.cartProducts.splice(prodIdx, 1);
-                            else console.log(`Got result = ${resJson.result} from delJson`);
-                        });
-                } else {
-                    this.$parent.putJson(`${this.cartUrl}/${prodId}`, {quantity: -1})
-                        .then((resJson) => {
-                            if (resJson.result === 1) {
-                                this.cartProducts[prodIdx].quantity--;
-                            }
-                            else {
-                                console.log(`Got result = ${resJson.result} from putJson`);
-                            }
-                        });
-
-                }
+                console.log(`Updating product with ID = ${prodId}`);
+                // augmenting old incremental logic with ability to directly set the quantity value
+                this.$parent.putJson(`${this.cartUrl}/${prodId}`, {quantity: 0, newQuantity: this.cartProducts[prodIdx].quantity})
+                    .then((resJson) => {
+                        if (resJson.result !== 1) {
+                            console.log(`Got result = ${resJson.result} from putJson`);
+                        }
+                    });
             } else {
                 console.log('Error: can\'t find the product to delete');
             }
@@ -186,6 +174,7 @@ Vue.component('fullcart-el', {
              :item="item"
              :data-id="item.id_product"
              :key="item.id_product"
+             @quantichange="updateProduct(item.id_product)"
         >
         </fullcart-item-el>
         <p v-if="isCartEmpty">The Cart Is Empty</p>
@@ -253,7 +242,7 @@ Vue.component('fullcart-item-el', {
                 </div>
             </div>
             <div class="cart-list-col"><span v-html="currencyTag"></span> {{ item.price }}</div>
-            <div class="cart-list-col"><input class="cart-list-quant" type="text" v-model.number="item.quantity"></div>
+            <div class="cart-list-col"><input class="cart-list-quant" type="text" v-model.number="item.quantity" @change="$emit('quantichange', item)"></div>
             <div class="cart-list-col">FREE</div>
             <div class="cart-list-col"><span v-html="currencyTag"></span> {{item.price * item.quantity}}</div>
             <div class="cart-list-col"><a class="cart-prod-del del-btn" :data-id="item.id_product" title="Delete">&#xe80c;</a></div>
