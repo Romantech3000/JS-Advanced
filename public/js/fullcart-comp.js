@@ -227,6 +227,12 @@ Vue.component('fullcart-item-el', {
             imgDir: TMB_DIR
         }
     },
+    methods: {
+        quantChange(item) {
+            if (isNaN(item.quantity) || (item.quantity < 1) ) item.quantity = 1;
+            this.$emit('quantichange', item);
+        }
+    },
 
     template: `
 
@@ -242,7 +248,7 @@ Vue.component('fullcart-item-el', {
                 </div>
             </div>
             <div class="cart-list-col"><span v-html="currencyTag"></span> {{ item.price }}</div>
-            <div class="cart-list-col"><input class="cart-list-quant" type="text" v-model.number="item.quantity" @change="$emit('quantichange', item)"></div>
+            <div class="cart-list-col"><input class="cart-list-quant" type="text" v-model.number="item.quantity" @change="quantChange(item)"></div>
             <div class="cart-list-col">FREE</div>
             <div class="cart-list-col"><span v-html="currencyTag"></span> {{item.price * item.quantity}}</div>
             <div class="cart-list-col"><a class="cart-prod-del del-btn" :data-id="item.id_product" title="Delete">&#xe80c;</a></div>
