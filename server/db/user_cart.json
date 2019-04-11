@@ -1,0 +1,27 @@
+{
+  "amount": 450,
+  "countGoods": 3,
+  "contents": [
+    {
+      "quantity": 2,
+      "img": "product_7.jpg",
+      "id_product": 7,
+      "product_name": "Homei's Hoody",
+      "price": 550
+    },
+    {
+      "quantity": 1,
+      "img": "product_4.jpg",
+      "id_product": 4,
+      "product_name": "Mongo People T-Shirt",
+      "price": 50
+    },
+    {
+      "quantity": 1,
+      "img": "product_8.jpg",
+      "id_product": 8,
+      "product_name": "Phoney People Shirt",
+      "price": 30
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+[
+  {
+    "catName": "Men",
+    "catId": 1,
+    "subCats": [
+      {
+        "catName": "Tees/Tank tops",
+        "catId": 201
+      },
+      {
+        "catName": "Shirts/Polos",
+        "catId": 202
+      },
+      {
+        "catName": "Sweaters",
+        "catId": 203
+      },
+      {
+        "catName": "Sweatshirts/Hoodies",
+        "catId": 204
+      },
+      {
+        "catName": "Blazers",
+        "catId": 205
+      },
+      {
+        "catName": "Jackets/vests",
+        "catId": 206
+      }
+    ]
+  },
+  {
+    "catName": "Women",
+    "catId": 2,
+    "subCats": [
+      {
+        "catName": "Dresses",
+        "catId": 101
+      },
+      {
+        "catName": "Tops",
+        "catId": 102
+      },
+      {
+        "catName": "Sweaters/Knits",
+        "catId": 103
+      },
+      {
+        "catName": "Jackets/Coats",
+        "catId": 104
+      },
+      {
+        "catName": "Blazers",
+        "catId": 105
+      },
+      {
+        "catName": "Denim",
+        "catId": 106
+      },
+      {
+        "catName": "Leggings/Pants",
+        "catId": 107
+      },
+      {
+        "catName": "Skirts/Shorts",
+        "catId": 108
+      },
+      {
+        "catName": "Accessories",
+        "catId": 109
+      },
+      {
+        "catName": "Bags/Purses",
+        "catId": 110
+      },
+      {
+        "catName": "Swimwear/Underwear",
+        "catId": 111
+      },
+      {
+        "catName": "Nightwear",
+        "catId": 112
+      },
+      {
+        "catName": "Shoes",
+        "catId": 113
+      },
+      {
+        "catName": "Beauty",
+        "catId": 114
+      }
+    ]
+  }
+]

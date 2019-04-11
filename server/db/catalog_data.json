@@ -1,0 +1,122 @@
+[
+	{
+		"id_product": 1,
+		"product_name": "Mango People T-Shirt",
+		"img": "product_1.jpg", 
+		"price": 2000
+	},
+	{
+		"id_product": 2, 
+		"product_name": "Tango People T-Shirt", 
+		"img": "product_2.jpg", 
+		"price": 20
+	},
+	{
+		"id_product": 3, 
+		"product_name": "Congo People T-Shirt", 
+		"img": "product_3.jpg", 
+		"price": 200
+	},
+	{
+		"id_product": 4, 
+		"product_name": "Mongo People T-Shirt", 
+		"img": "product_4.jpg", 
+		"price": 50
+	},
+	{
+		"id_product": 5, 
+		"product_name": "Bongo People T-Shirt", 
+		"img": "product_5.jpg", 
+		"price": 150
+	},
+	{
+		"id_product": 6, 
+		"product_name": "Mango Jacket", 
+		"img": "product_6.jpg", 
+		"price": 150
+	},
+	{
+		"id_product": 7, 
+		"product_name": "Homei's Hoody", 
+		"img": "product_7.jpg", 
+		"price": 550
+	},
+    {
+		"id_product": 8, 
+		"product_name": "Phoney People Shirt", 
+		"img": "product_8.jpg", 
+		"price": 30
+	},
+	{
+		"id_product": 9, 
+		"product_name": "Jackal's Jacket", 
+		"img": "product_9.jpg", 
+		"price": 150
+	},
+	{
+		"id_product": 10, 
+		"product_name": "Poncho Mexicano", 
+		"img": "product_10.jpg", 
+		"price": 550
+	},
+    {
+		"id_product": 11, 
+		"product_name": "Herp & Derp Shirt", 
+		"img": "product_11.jpg", 
+		"price": 30
+	},
+	{
+		"id_product": 12,
+		"product_name": "Phoney People Shirt",
+		"img": "product_12.jpg",
+		"price": 30
+	},
+	{
+		"id_product": 13,
+		"product_name": "Nitro Jacket",
+		"img": "product_13.jpg",
+		"price": 150
+	},
+	{
+		"id_product": 14,
+		"product_name": "Junkie's Delight",
+		"img": "product_14.jpg",
+		"price": 550
+	},
+	{
+		"id_product": 15,
+		"product_name": "D-Shirt",
+		"img": "product_15.jpg",
+		"price": 30
+	},
+	{
+		"id_product": 16,
+		"product_name": "Mongo Jacket",
+		"img": "product_16.jpg",
+		"price": 50
+	},
+	{
+		"id_product": 17,
+		"product_name": "Bongo People T-Shirt",
+		"img": "product_17.jpg",
+		"price": 150
+	},
+	{
+		"id_product": 18,
+		"product_name": "Leggins",
+		"img": "product_18.jpg",
+		"price": 150
+	},
+	{
+		"id_product": 19,
+		"product_name": "Bongo Jacket abd Pants",
+		"img": "product_19.jpg",
+		"price": 150
+	},
+	{
+		"id_product": 20,
+		"product_name": "Rastafari Skirt",
+		"img": "product_20.jpg",
+		"price": 150
+	}
+]
